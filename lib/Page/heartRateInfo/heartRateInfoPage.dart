@@ -16,7 +16,7 @@ class _GroupWidgetState extends State<HeartRateInfoPage> {
     return Scrollbar(
         child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
-            reverse: true,
+            reverse: false,
             padding: const EdgeInsets.all(0.0),
             physics: const BouncingScrollPhysics(),
             child:Stack(
@@ -41,8 +41,7 @@ class _GroupWidgetState extends State<HeartRateInfoPage> {
                         Image.asset('assets/images/Detail-Navs.png')
                       ],
                     ),
-                    const Text(" "),
-                    const Text(" "),
+                    SizedBox(height: 40,width: 5),
                     Stack(
                         alignment: Alignment.bottomCenter,
                         children: <Widget>[Image.asset('assets/images/Group 10015.png'),
@@ -60,8 +59,7 @@ class _GroupWidgetState extends State<HeartRateInfoPage> {
                           ),
                         ]
                     ),
-                    const Text(" "),
-                    const Text(" "),
+                    SizedBox(height: 40,width: 5),
                     Container(
 
                       decoration: const BoxDecoration(

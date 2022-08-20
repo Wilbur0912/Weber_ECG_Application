@@ -13,11 +13,11 @@ class LineChartSample10 extends StatefulWidget {
 
 class _LineChartSample10State extends State<LineChartSample10> {
   final Color sinColor = Colors.redAccent;
-  final Color cosColor = Colors.blueAccent;
+
 
   final limitCount = 100;
   final sinPoints = <FlSpot>[];
-  final cosPoints = <FlSpot>[];
+  //final cosPoints = <FlSpot>[];
 
   double xValue = 0;
   double step = 0.05;
@@ -30,11 +30,11 @@ class _LineChartSample10State extends State<LineChartSample10> {
     timer = Timer.periodic(const Duration(milliseconds: 40), (timer) {
       while (sinPoints.length > limitCount) {
         sinPoints.removeAt(0);
-        cosPoints.removeAt(0);
+        //cosPoints.removeAt(0);
       }
       setState(() {
         sinPoints.add(FlSpot(xValue, math.sin(xValue)));
-        cosPoints.add(FlSpot(xValue, math.cos(xValue)));
+        //cosPoints.add(FlSpot(xValue, math.cos(xValue)));
       });
       xValue += step;
     });
@@ -42,8 +42,8 @@ class _LineChartSample10State extends State<LineChartSample10> {
 
   @override
   Widget build(BuildContext context) {
-    return cosPoints.isNotEmpty
-        ? Column(
+    return //cosPoints.isNotEmpty?
+         Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
 
@@ -77,8 +77,8 @@ class _LineChartSample10State extends State<LineChartSample10> {
           ),
         )
       ],
-    )
-        : Container();
+    );
+        //: Container();
   }
 
   LineChartBarData sinLine(List<FlSpot> points) {
@@ -98,21 +98,7 @@ class _LineChartSample10State extends State<LineChartSample10> {
     );
   }
 
-  LineChartBarData cosLine(List<FlSpot> points) {
-    return LineChartBarData(
-      spots: points,
-      dotData: FlDotData(
-        show: false,
-      ),
-      gradient: LinearGradient(
-          colors: [sinColor.withOpacity(0), sinColor],
-          begin: Alignment.centerLeft,
-          end: Alignment.centerRight,
-          stops: const [0.1, 1.0]),
-      barWidth: 4,
-      isCurved: false,
-    );
-  }
+
 
   @override
   void dispose() {

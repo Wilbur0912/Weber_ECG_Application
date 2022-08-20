@@ -5,7 +5,7 @@ import 'package:percent_indicator/percent_indicator.dart';
 
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:ecg/model/homePageSaleModel.dart';
-
+//weber好帥
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
